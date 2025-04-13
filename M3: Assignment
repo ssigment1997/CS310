@@ -1,10 +1,13 @@
-#include <stdio.h>
+#Student: Benjamin Cherelus
+#include <iostream>
+#include <iomanip> // For std::fixed and std::setprecision
 
-#define FIXED_PAYMENT 25000.0
-#define OPTION2_RATE 0.125
-#define OPTION3_RATE_LOW 0.10
-#define OPTION3_RATE_HIGH 0.14
-#define THRESHOLD_COPIES 4000
+// Named constants for royalty calculations
+const double FIXED_PAYMENT = 25000.0;
+const double OPTION2_RATE = 0.125;
+const double OPTION3_RATE_LOW = 0.10;
+const double OPTION3_RATE_HIGH = 0.14;
+const int THRESHOLD_COPIES = 4000;
 
 int main() {
     double price, copies;
@@ -12,15 +15,15 @@ int main() {
     int bestOption;
 
     // Input
-    printf("Enter the net price of each copy: ");
-    scanf("%lf", &price);
-    printf("Enter the estimated number of copies sold: ");
-    scanf("%lf", &copies);
+    std::cout << "Enter the net price of each copy: ";
+    std::cin >> price;
+    std::cout << "Enter the estimated number of copies sold: ";
+    std::cin >> copies;
 
     // Calculate royalties for each option
     option1 = FIXED_PAYMENT;
     option2 = OPTION2_RATE * price * copies;
-    
+
     if (copies <= THRESHOLD_COPIES) {
         option3 = OPTION3_RATE_LOW * price * copies;
     } else {
@@ -38,25 +41,27 @@ int main() {
     }
 
     // Output results
-    printf("\nRoyalties under each option:\n");
-    printf("Option 1: $%.2f\n", option1);
-    printf("Option 2: $%.2f\n", option2);
-    printf("Option 3: $%.2f\n\n", option3);
+    std::cout << "\nRoyalties under each option:\n";
+    std::cout << "Option 1: $" << std::fixed << std::setprecision(2) << option1 << "\n";
+    std::cout << "Option 2: $" << std::fixed << std::setprecision(2) << option2 << "\n";
+    std::cout << "Option 3: $" << std::fixed << std::setprecision(2) << option3 << "\n\n";
 
     // Switch statement to display the best option
     switch(bestOption) {
         case 1:
-            printf("Best option: Option 1\n");
+            std::cout << "Best option: Option 1\n";
             break;
         case 2:
-            printf("Best option: Option 2\n");
+            std::cout << "Best option: Option 2\n";
             break;
         case 3:
-            printf("Best option: Option 3\n");
+            std::cout << "Best option: Option 3\n";
             break;
         default:
-            printf("Error in determining the best option.\n");
+            std::cout << "Error in determining the best option.\n";
+            break;
     }
 
     return 0;
 }
+
