@@ -1,4 +1,4 @@
-#Student: Benjamin Cherelus
+
 #include <iostream>
 #include <iomanip> // For std::fixed and std::setprecision
 
