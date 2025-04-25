@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int matrix[2][2] = {{1, 2}, {3, 4}};
+    int sum = 0;
+
+    // Error 1: Using wrong variable name 'i' instead of 'row'
+    for (int row = 0; row < 2; row++) {
+        for (int col = 0; col < 2; col++) {
+            sum += matrix[i][col]; // 'i' is undeclared
+        }
+    }
+
+    // Error 2: Misspelled 'cout' as 'cotu'
+    cotu << "Sum of elements: " << sum << endl;
+
+    return 0;
+}
