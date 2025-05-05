@@ -1,0 +1,97 @@
+/*
+* Student Name: Jay Fisher
+* File Name: M8_Discussion_Corrected.cpp
+* Date: 05/01/2025
+* Visual C++ 2022   00476 - 80000 - 00000 - AA685
+* Microsoft Visual C++ 2022
+*/
+
+#include <iostream>
+#include <conio.h>
+#include <string>
+
+using namespace std;
+
+//  -------------------------------------------------------------------------------------------------------
+//  This program helps keep track of animals and plants on your farms.
+//  It uses classes to store the number of animals and plants, as well as their names.
+//  -------------------------------------------------------------------------------------------------------
+
+//  Class for plants
+class plants {
+public:
+    int plant_num;
+    string plant_name;
+
+    plants() : plant_num(0), plant_name("") {}
+
+    void getInfo();
+    void displayInfo();
+};
+
+//  Implementation of plant member functions
+void plants::getInfo() {
+    cout << "  Enter the number of plants: ";
+    while (true) {
+        if (cin >> plant_num) {
+            break;
+        } else {
+            cout << "  Please enter a valid number: ";
+            cin.clear();
+            cin.ignore(1000, '\n');
+        }
+    }
+    cout << "  Enter the name of the plant: ";
+    while (true) {
+        if (cin >> plant_name) {
+            break;
+        } else {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "\n  Enter a valid name: ";
+        }
+    }
+}
+
+void plants::displayInfo() {
+    cout << "  The number of plants is: " << plant_num << endl;
+    cout << "  The name of the plant is: " << plant_name << endl;
+}
+
+//  Class for animals
+class animals {
+public:
+    int animal_num;
+    string animal_name;
+
+    animals() : animal_num(0), animal_name("") {}
+
+    void getInfo();
+    void displayInfo();
+};
+
+//  Implementation of animal member functions
+void animals::getInfo() {
+    cout << "  Enter the number of animals: ";
+    while (true) {
+        if (cin >> animal_num) {
+            break;
+        } else {
+            cout << "  Please enter a valid number: ";
+            cin.clear();
+            cin.ignore(1000, '\n');
+        }
+    }
+    cout << "  Enter the name of the animal: ";
+    while (true) {
+        if (cin >> animal_name) {
+            break;
+        } else {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "\n  Enter a valid name: ";
+        }
+    }
+}
+
+void an
