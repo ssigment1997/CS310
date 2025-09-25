@@ -1,6 +1,6 @@
 /*
     Name: [Benjamin Cherelus]
-    Course Number: [CS310]
+    
     Assignment Title: Remove Vowels from a String
 */
 
